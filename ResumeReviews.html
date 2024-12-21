@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Reviews - Swathi Soundararaj</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Soehne:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation Section -->
+    <nav class="navbar">
+      <div class="navbar-container">
+        <h1 class="logo">SWATHI SOUNDAR</h1>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-item">Work</a></li>
+          <li><a href="MyResume.html" class="nav-item">My Resume</a></li>
+          <li>
+            <a href="About+Connect.html" class="nav-item">About + Connect</a>
+          </li>
+          <li><a href="#|" class="nav-item"> | </a></li>
+          <li><a href="mentorship.html" class="nav-item">Mentorship</a></li>
+          <li>
+            <a href="ResumeReviews.html" class="nav-item active"
+              >Resume Reviews</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Resume Reviews Section -->
+    <section id="resume-reviews" class="section resume-reviews">
+      <div class="container">
+        <h1>Resume Reviews</h1>
+
+        <p>
+          Are you a budding Product Manager or a professional looking to elevate
+          your resume to stand out to recruiters? I can help!
+        </p>
+        <p>
+          With years of experience as a Product Manager and mentor, I know what
+          makes a resume impactful and how to highlight your skills effectively.
+          Together, we will work to:
+        </p>
+        <ul>
+          <li>Create a resume that captures your unique story.</li>
+          <li>
+            Showcase your skills and achievements to make a lasting impression.
+          </li>
+          <li>Provide feedback to refine and enhance your resume.</li>
+          <li>
+            Prepare you to confidently present your experience to hiring
+            managers.
+          </li>
+        </ul>
+
+        <p>I’m excited to help you make your resume the best it can be!</p>
+
+        <h2>Interested?</h2>
+        <p>
+          Fill out the form below, and I'll get in touch with you to get
+          started.
+        </p>
+
+        <!-- Contact Form -->
+        <form id="resume-review-form" class="resume-form">
+          <div class="form-group">
+            <label for="first-name">First Name <span>(required)</span></label>
+            <input
+              type="text"
+              id="first-name"
+              name="first-name"
+              required
+              placeholder="Enter your first name"
+              aria-label="First Name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="last-name">Last Name</label>
+            <input
+              type="text"
+              id="last-name"
+              name="last-name"
+              placeholder="Enter your last name"
+              aria-label="Last Name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address <span>(required)</span></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="Enter your email address"
+              aria-label="Email Address"
+            />
+          </div>
+          <div class="form-group">
+            <label for="message">Message <span>(required)</span></label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              placeholder="Let me know what you'd like to improve or ask."
+              aria-label="Message"
+            ></textarea>
+          </div>
+          <button type="submit" class="cta-button">Submit</button>
+        </form>
+
+        <p>
+          PS: Feel free to
+          <a href="https://linkedin.com/in/swathisoundar">add me on LinkedIn</a>
+          as well. Just mention that you found me here!
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="footer" class="footer">
+      <p class="footer-text">Swathi Soundararaj | Product Manager</p>
+    </footer>
+
+    <!-- JavaScript to Handle Form Submission -->
+    <script>
+      document
+        .getElementById("resume-review-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const firstName = document.getElementById("first-name").value;
+          const lastName = document.getElementById("last-name").value || "";
+          const email = document.getElementById("email").value;
+          const message = document.getElementById("message").value;
+
+          alert(
+            `Thank you, ${firstName} ${lastName.trim()}! Your request has been submitted. I'll reach out to ${email} soon!`
+          );
+
+          // Add real email functionality by integrating with EmailJS or server-side email scripts.
+          console.log(
+            `Resume review request from ${firstName} ${lastName.trim()} (${email}): ${message}`
+          );
+        });
+    </script>
+  </body>
+</html>

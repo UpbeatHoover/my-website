@@ -1,0 +1,1062 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Soehne", sans-serif;
+  color: #ffffff;
+  background-color: #000000;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+
+
+/* Navigation Section */
+.navbar {
+  background-color: #000000;
+  padding: 2rem 4rem; /* Increase padding for spacing */
+  width: 100%;
+  border-bottom: none;
+  box-shadow: none;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem; /* Adjust font size to match */
+  font-family: 'europa', sans-serif; /* Ensure proper fallback */
+  font-weight: 500; /* Adjust weight to match the lighter font */
+  line-height: 1; /* Ensure consistent vertical spacing */
+  letter-spacing: 0.10em; /* Increase letter spacing for alignment */
+  text-transform: uppercase; /* Correct typo in "text-transform" */
+  color: #ffffff; /* Keep solid black color */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+}
+
+.nav-links a {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: #cccccc;
+}
+
+.nav-links a.active {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.nav-links a:hover {
+  color: #eeeeee;
+}
+
+/* Section General Style */
+.section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+/* Intro Section */
+#intro {
+  text-align: center;
+}
+
+.intro-container {
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #ffffff;
+}
+
+.intro-line {
+  white-space: nowrap; /* Prevent wrapping */
+  overflow: hidden; /* Hide overflowing text */
+  border-right: 2px solid #ffffff; /* Cursor effect */
+}
+
+.line-1 {
+  animation: typing1 2s steps(30, end) forwards, cursorFade 0.5s 2s forwards; /* Typing + cursor fades */
+}
+
+.line-2 {
+  animation: typing2 2s steps(30, end) 2.5s forwards, cursorFade 0.5s 4.5s forwards; /* Typing + cursor fades */
+  visibility: hidden; /* Initially hidden until animation starts */
+}
+
+/* Typing animations */
+@keyframes typing1 {
+  from {
+    width: 0; /* Start with no text */
+  }
+  to {
+    width: 100%; /* Full width of the first line */
+  }
+}
+
+@keyframes typing2 {
+  from {
+    width: 0; /* Start with no text */
+    visibility: visible;
+  }
+  to {
+    width: 100%; /* Full width of the second line */
+    visibility: visible;
+  }
+}
+
+/* Cursor fade-out animation */
+@keyframes cursorFade {
+  from {
+    border-color: #ffffff; /* Visible cursor */
+  }
+  to {
+    border-color: transparent; /* Cursor disappears */
+  }
+}
+
+
+
+/* Blog Grid Section */
+#blog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  padding: 3rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.grid-item {
+  position: relative;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.grid-item:nth-child(1) {
+  background-color: #F76F8E;
+}
+
+.grid-item:nth-child(2) {
+  background-color: #4ae0e1;
+}
+
+.grid-item:nth-child(3) {
+  background-color: #ffd166;
+}
+
+.grid-item:nth-child(4) {
+  background-color: #f15b78;
+}
+
+.grid-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  position: relative;
+}
+
+.grid-image {
+  max-width: 80%;
+  max-height: 80%;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.grid-title {
+  position: absolute;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.grid-item:hover .grid-title {
+  opacity: 1;
+}
+
+.grid-item:hover .grid-image {
+  opacity: 0.2; /* 80% fade */
+  transform: scale(1.05); /* Optional slight zoom effect */
+}
+
+/* Testimonial Section */
+
+#testimonial {
+  padding: 5rem 2rem;
+  background-color: #000000; /* Background color for testimonial section */
+}
+
+.testimonial-container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.testimonial-text {
+  font-size: 1.8rem; /* Slightly larger font size */
+  line-height: 2.2; /* Increased line spacing for readability */
+  color: #ffffff;
+  margin-bottom: 3rem; /* Spacing below the text */
+  text-align: center;
+}
+
+.testimonial-author {
+  font-size: 1.2rem; /* Smaller font size for the author */
+  font-style: italic; /* Italicize the author name */
+  color: #cccccc; /* Lighter color for author text */
+  margin-bottom: 4rem; /* Extra space below the author for separation */
+}
+
+.button-container {
+  text-align: center; /* Center the button */
+  padding-top: 5rem; /* Added padding to the container itself */
+  width: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.cta-button {
+  font-size: 1.2rem;
+  color: #4ae0e1;
+  border: 2px solid #4ae0e1;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+
+.cta-button:hover {
+  background-color: #4ae0e1;
+  color: #000000;
+}
+
+
+/* Footer Section */
+.footer {
+  text-align: center;
+  padding: 2rem 0;
+  background-color: #000000;
+}
+
+.footer-text {
+  font-size: 1rem;
+  color: #cccccc;
+}
+
+/* Mentorship Section */
+.mentorship {
+  padding: 8rem 2rem; /* Adjusted for better spacing */
+  background-color: #000000;
+  min-height: 100vh;
+}
+
+.mentorship h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: #ffffff;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 2rem;
+}
+
+.mentorship p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  color: #ffffff;
+  text-align: center;
+  max-width: 800px; /* Restrict width for better readability */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mentorship h2,
+.mentorship h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 6rem 0 1.5rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+.mentorship-form {
+  background-color: #000000;
+  padding: 3rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin-top: 6rem;
+  max-width: 600px; /* Adjusted for uniformity */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mentorship-form .form-group {
+  margin-bottom: 2rem;
+}
+
+.mentorship-form label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.mentorship-form input,
+.mentorship-form textarea {
+  width: 100%;
+  padding: 0.9rem;
+  border: 1px solid #555555;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #333333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mentorship-form input:focus,
+.mentorship-form textarea:focus {
+  border-color: #4ae0e1;
+  box-shadow: 0 0 5px rgba(74, 224, 225, 0.5);
+  outline: none;
+}
+
+.mentorship-form textarea {
+  resize: vertical; /* Allow resizing only vertically */
+}
+
+.mentorship-form button {
+  font-size: 1.2rem;
+  color: #4ae0e1;
+  border: 2px solid #4ae0e1;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+
+.mentorship-form button:hover {
+  background-color: #4ae0e1;
+  color: #000000;
+
+}
+
+.mentorship-form span {
+  font-size: 0.9rem;
+  color: #cccccc;
+}
+
+/* Center align ordered list numbers */
+ol {
+  list-style-position: inside;
+  text-align: center;
+  padding-left: 0;
+  margin: 2rem auto;
+}
+
+ol li {
+  text-align: left; /* Align text under centered number */
+  margin-bottom: 1.5rem;
+  padding-left: 1rem; /* Align with form and other text */
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #cccccc;
+}
+
+.mentorship a {
+  color: #4ae0e1;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.mentorship a:hover {
+  text-decoration: underline;
+  color: #3cbfc2;
+}
+
+/* About Section */
+.about {
+  padding: 8rem 2rem;
+  display: flex;
+  flex-direction: row; /* Arrange text and images side by side */
+  align-items: flex-start; /* Align content to the top */
+  gap: 4rem; /* Add spacing between text and images */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about h1 {
+  font-size: 3.8rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 5rem;
+  color: #ffffff
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.about h3 {
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 15rem;
+  color: #ffffff;
+}
+
+.bio-content {
+  display: flex;
+  flex-direction: row;
+  gap: 10rem;
+}
+
+.bio-text {
+  flex: 2; /* Text takes more space */
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #cccccc;
+  text-align: justify;
+}
+
+.bio-text h4 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.bio-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #cccccc;
+}
+
+.bio-images {
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* Stack images vertically */
+  gap: 4rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.bio-image {
+  width: 100%;
+  max-width: 300px;
+  object-fit: coverl
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+
+
+/* Skills Section */
+.skills {
+  padding: 6rem 2rem;
+  background-color: #000000;
+  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skills h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  color: #ffffff;
+}
+
+.skills p {
+  margin-bottom: 1.5rem; /* Adjust this value to control the spacing */
+  line-height: 1.8; /* Ensures good readability */
+  color: #cccccc;
+  text-align: justify;
+}
+
+/* Connect Section */
+.connect {
+  padding: 6rem 2rem;
+  text-align: center;
+  background-color: #000000;
+}
+
+.connect h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+.connect p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  color: #ffffff;
+}
+
+.contact-options {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.contact-link {
+  font-size: 1.2rem;
+  color: #4ae0e1;
+  border: 2px solid #4ae0e1;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+  background-color: #4ae0e1;
+  color: #000000;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .bio-content {
+    flex-direction: column;
+  }
+
+  .bio-images {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .bio-image {
+    max-width: 150px;
+  }
+
+  .skills ul {
+    text-align: center;
+  }
+
+  .contact-options {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* Resume Section */
+.resume-title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.resume-preview {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.resume-description {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.resume-image-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.resume-image {
+  max-width: 70%; /* Adjust the size of the resume image */
+  opacity: 0.6; /* 60% transparency */
+  filter: blur(1.5px); /* Apply blur effect */
+  border-radius: 10px; /* Smooth corners */
+}
+
+.view-resume {
+  position: absolute;
+  top: 75%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust to center */
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  color: #22223b;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border: 2px solid #22223b;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.view-resume:hover {
+  background: #22223b;
+  color: #ffffff;
+}
+
+.resume-update {
+  position: absolute;
+  top: 85%; /* Position it slightly below the button */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%);
+  font-size: 1rem;
+  color: #3f8ccf;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.8); /* Optional: make it stand out */
+  padding: 0.2rem 0.5rem; /* Add slight padding */
+  border-radius: 4px; /* Smooth corners for better visuals */
+}
+
+.request-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.resume-form {
+  background-color: #000000; 
+  padding: 3rem; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin-top: 6rem;
+  max-width: 600px; /* Adjust to uniform width */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.resume-form .form-group {
+  margin-bottom: 2rem;
+}
+
+.resume-form label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600; /* Bold text for labels */
+  margin-bottom: 0.5rem;
+  color: #ffffff; /* White text color */
+}
+
+.resume-form input,
+.resume-form textarea {
+  width: 100%;
+  padding: 0.9rem;
+  border: 1px solid #555555; /* Border to match mentorship form */
+  border-radius: 6px; /* Rounded corners */
+  font-size: 1rem;
+  color: #ffffff; /* White text color */
+  background-color: #333333; /* Dark background for inputs */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resume-form input:focus,
+.resume-form textarea:focus {
+  border-color: #4ae0e1; /* Aqua focus color */
+  box-shadow: 0 0 5px rgba(74, 224, 225, 0.5); /* Subtle glow effect */
+  outline: none;
+}
+
+.resume-form textarea {
+  resize: vertical; /* Allow vertical resizing */
+}
+
+.cta-button {
+  font-size: 1.2rem;
+  background-color: #000000;
+  color: #4ae0e1 !important;
+  border: 2px solid #4ae0e1 !important;
+  padding: 0.8rem 1.5rem !important;
+  border-radius: 5px !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+}
+
+
+.cta-button:hover {
+  background-color: #4ae0e1;
+  color: #000000;
+}
+
+/* Resume Reviews Section */
+.resume-reviews {
+  background-color: #000000;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.resume-reviews h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 6rem;
+  color: #ffffff;
+}
+
+.resume-reviews p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  color: #ffffff;
+  max-width: 800px;
+  margin: 2 auto;
+}
+
+.resume-reviews ul {
+  text-align: left;
+  margin: 6rem auto;
+  padding: 0;
+  list-style-position: inside;
+  max-width: 800px;
+}
+
+.resume-reviews ul li {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+/* Contact Form */
+.resume-form {
+  background-color: #000000; 
+  padding: 3rem; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin-top: 6rem;
+  max-width: 600px; /* Adjust to uniform width */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.resume-form .form-group {
+  margin-bottom: 2rem;
+}
+
+.resume-form label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600; /* Bold text for labels */
+  margin-bottom: 0.5rem;
+  color: #ffffff; /* White text color */
+}
+
+.resume-form input,
+.resume-form textarea {
+  width: 100%;
+  padding: 0.9rem;
+  border: 1px solid #555555; /* Border to match mentorship form */
+  border-radius: 6px; /* Rounded corners */
+  font-size: 1rem;
+  color: #ffffff; /* White text color */
+  background-color: #333333; /* Dark background for inputs */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resume-form input:focus,
+.resume-form textarea:focus {
+  border-color: #4ae0e1; /* Aqua focus color */
+  box-shadow: 0 0 5px rgba(74, 224, 225, 0.5); /* Subtle glow effect */
+  outline: none;
+}
+
+.resume-form textarea {
+  resize: vertical; /* Allow vertical resizing */
+}
+
+.cta-button {
+  font-size: 1.2rem;
+  color: #4ae0e1;
+  border: 2px solid #4ae0e1;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+
+.cta-button:hover {
+  background-color: #4ae0e1;
+  color: #000000;
+}
+
+/* Blog Header Section */
+.blog-header {
+  background-color: #ffffff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.blog-header h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #22223b;
+  margin-bottom: 1rem;
+}
+
+.blog-header .blog-subtitle {
+  font-size: 1.5rem;
+  color: #555;
+  font-weight: 400;
+}
+
+/* Blog Content Section */
+.blog-content {
+  padding: 4rem 2rem;
+  color: #333;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.blog-content .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.blog-content h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 2rem 0 1rem;
+  color: #22223b;
+}
+
+.blog-content ul {
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+  list-style-type: disc;
+}
+
+.blog-content ul li {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.blog-content blockquote {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  border-left: 4px solid #4ae0e1;
+  font-style: italic;
+  color: #555;
+}
+
+/* Featured Section */
+.featured-section {
+  background-color: #f3f3fc;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.featured-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #22223b;
+}
+
+.featured-section img {
+  max-width: 80%;
+  margin: 1rem auto;
+  display: block;
+}
+
+/* Metrics Section */
+.metrics-section {
+  padding: 4rem 2rem;
+  background-color: #ffffff;
+}
+
+.metrics-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #22223b;
+  text-align: center;
+}
+
+.metrics-section ul {
+  padding-left: 1.5rem;
+  list-style-type: disc;
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+.metrics-section ul li {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+/* Key Takeaways Section */
+.key-takeaways-section {
+  background-color: #f9f9f9;
+  padding: 4rem 2rem;
+}
+
+.key-takeaways-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #22223b;
+  text-align: center;
+}
+
+.key-takeaways-section p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* Footer Section */
+.footer {
+  background-color: #000000;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 1rem;
+  color: #cccccc;
+}
+
+/* Image Gallery Section */
+.image-gallery {
+  padding: 4rem 2rem;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.image-gallery img {
+  max-width: 15%;
+  margin: 0.5rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.image-gallery p {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .blog-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .blog-header .blog-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .blog-content .container,
+  .metrics-section ul,
+  .key-takeaways-section p {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .image-gallery img {
+    max-width: 30%;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Single-column layout for smaller screens */
+  }
+
+  .grid-item {
+    height: 200px; /* Reduce height for smaller screens */
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .mentorship h1 {
+    font-size: 2.5rem;
+  }
+
+  .mentorship p {
+    font-size: 1rem;
+  }
+
+  .mentorship-form {
+    padding: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .about h1,
+    .skills h2,
+    .connect h2 {
+      font-size: 2.5rem;
+    }
+
+    .about p,
+    .skills p,
+    .connect p {
+      font-size: 1rem;
+    }
+
+    .contact-link {
+      font-size: 1rem;
+      padding: 0.6rem 1rem;
+    }
+  }
+}

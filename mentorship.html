@@ -14,7 +14,8 @@
     <!-- Navigation Section -->
     <nav class="navbar">
       <div class="navbar-container">
-        <h1 class="logo">SWATHI SOUNDAR</h1>
+        <h1 class="logo"><a href="index.html">SWATHI SOUNDAR</a></h1>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         <ul class="nav-links">
           <li><a href="index.html" class="nav-item">Work</a></li>
           <li><a href="MyResume.html" class="nav-item">My Resume</a></li>
@@ -52,7 +53,7 @@
 
         <h2>Fill out the form below to book a time with me</h2>
 
-        <form class="mentorship-form">
+        <form id="mentorship-form" class="mentorship-form">
           <div class="form-group">
             <label for="name">Full Name <span>(required)</span></label>
             <input
@@ -86,8 +87,42 @@
               aria-label="Your Message"
             ></textarea>
           </div>
+          <!-- Hidden input for form_type -->
+          <input type="hidden" name="form_type" value="mentorship_booking" />
           <button type="submit" class="cta-button">Submit</button>
         </form>
+
+        <!-- EmailJS Script -->
+        <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+        <script>
+          // Initialize EmailJS
+          emailjs.init("kheji5DNQX-V88w3_"); // Replace with your EmailJS Public Key
+
+          // Form Submission Handler
+          document
+            .getElementById("mentorship-form")
+            .addEventListener("submit", function (event) {
+              event.preventDefault(); // Prevent default form submission
+
+              // Collect form data
+              const serviceID = "service_8du78ku"; // Replace with your EmailJS Service ID
+              const templateID = "template_q48tefr"; // Replace with your EmailJS Template ID
+
+              // Send email using EmailJS
+              emailjs.sendForm(serviceID, templateID, this).then(
+                function () {
+                  alert("Your message has been sent successfully!");
+
+                  // Reset the form fields
+                  document.getElementById("mentorship-form").reset();
+                },
+                function (error) {
+                  alert("Failed to send your message. Please try again.");
+                  console.error("EmailJS Error:", error);
+                }
+              );
+            });
+        </script>
 
         <h3>If you have any questions, feel free to reach out :)</h3>
         <p>
@@ -104,3 +139,10 @@
     </footer>
   </body>
 </html>
+
+<script>
+  function toggleMenu() {
+    const navLinks = document.querySelector(".nav-links");
+    navLinks.classList.toggle("active");
+  }
+</script>

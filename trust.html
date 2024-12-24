@@ -14,7 +14,8 @@
     <!-- Navigation Section -->
     <nav class="navbar">
       <div class="navbar-container">
-        <h1 class="logo">SWATHI SOUNDAR</h1>
+        <h1 class="logo"><a href="index.html">SWATHI SOUNDAR</a></h1>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         <ul class="nav-links">
           <li><a href="index.html" class="nav-item">Work</a></li>
           <li><a href="MyResume.html" class="nav-item">My Resume</a></li>
@@ -137,3 +138,10 @@
     </footer>
   </body>
 </html>
+
+<script>
+  function toggleMenu() {
+    const navLinks = document.querySelector(".nav-links");
+    navLinks.classList.toggle("active");
+  }
+</script>

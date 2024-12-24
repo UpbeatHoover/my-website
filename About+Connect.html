@@ -14,19 +14,15 @@
     <!-- Navigation Section -->
     <nav class="navbar">
       <div class="navbar-container">
-        <h1 class="logo">SWATHI SOUNDAR</h1>
+        <h1 class="logo"> <a href="index.html">SWATHI SOUNDAR</a></h1>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         <ul class="nav-links">
           <li><a href="index.html" class="nav-item">Work</a></li>
           <li><a href="MyResume.html" class="nav-item">My Resume</a></li>
-          <li>
-            <a href="About+Connect.html" class="nav-item active"
-              >About + Connect</a>
-          </li>
+          <li><a href="About+Connect.html" class="nav-item active">About + Connect</a></li>
           <li><a href="#|" class="nav-item"> | </a></li>
           <li><a href="mentorship.html" class="nav-item">Mentorship</a></li>
-          <li>
-            <a href="ResumeReviews.html" class="nav-item">Resume Reviews</a>
-          </li>
+          <li><a href="ResumeReviews.html" class="nav-item">Resume Reviews</a></li>
         </ul>
       </div>
     </nav>
@@ -165,3 +161,19 @@
     </footer>
   </body>
 </html>
+
+<script>
+  function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+  }
+</script>
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('full-screen');
+  });
+</script>

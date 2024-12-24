@@ -14,7 +14,8 @@
     <!-- Navigation Section -->
     <nav class="navbar">
       <div class="navbar-container">
-        <h1 class="logo">SWATHI SOUNDAR</h1>
+        <h1 class="logo"><a href="index.html">SWATHI SOUNDAR</a></h1>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         <ul class="nav-links">
           <li><a href="index.html" class="nav-item">Work</a></li>
           <li><a href="MyResume.html" class="nav-item">My Resume</a></li>
@@ -42,19 +43,23 @@
           your resume to stand out to recruiters? I can help!
         </p>
         <p>
-          With years of experience as a Product Manager and mentor, I know what
-          makes a resume impactful and how to highlight your skills effectively.
+          With years of experience in Product Management, I know what makes a
+          resume impactful and how to highlight your skills effectively.
           Together, we will work to:
         </p>
         <ul>
-          <li>Create a resume that captures your unique story.</li>
           <li>
-            Showcase your skills and achievements to make a lasting impression.
+            🖌️ Craft a resume that paints your unique story like a masterpiece!
           </li>
-          <li>Provide feedback to refine and enhance your resume.</li>
           <li>
-            Prepare you to confidently present your experience to hiring
-            managers.
+            ✨ Show off your skills and achievements to shine like a star!
+          </li>
+          <li>
+            🔧 Fine-tune your resume with feedback for that perfect polish.
+          </li>
+          <li>
+            🚀 Gear up to present your experience with confidence to hiring
+            managers!
           </li>
         </ul>
 
@@ -114,7 +119,7 @@
           <button type="submit" class="cta-button">Submit</button>
         </form>
 
-        <p>
+        <p class="ps-note">
           PS: Feel free to
           <a href="https://linkedin.com/in/swathisoundar">add me on LinkedIn</a>
           as well. Just mention that you found me here!
@@ -151,3 +156,10 @@
     </script>
   </body>
 </html>
+
+<script>
+  function toggleMenu() {
+    const navLinks = document.querySelector(".nav-links");
+    navLinks.classList.toggle("active");
+  }
+</script>

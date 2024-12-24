@@ -40,10 +40,32 @@ body {
   color: #ffffff; /* Keep solid black color */
 }
 
+.logo a {
+  text-decoration: none; /* Remove underline from the link */
+  color: inherit; /* Inherit the color from the .logo class */
+  font-size: inherit; /* Inherit the font size from the .logo class */
+  font-family: inherit; /* Inherit the font family */
+  font-weight: inherit; /* Inherit the font weight */
+  letter-spacing: inherit; /* Inherit letter spacing */
+  text-transform: inherit; /* Inherit text transformation */
+}
+
+.logo a:hover {
+  color: #eeeeee; /* Optional hover effect */
+}
+
+
 .nav-links {
   list-style: none;
   display: flex;
   gap: 3rem;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: #ffffff;
+  cursor: pointer;
 }
 
 .nav-links a {
@@ -188,9 +210,10 @@ body {
 }
 
 .grid-image {
-  max-width: 80%;
-  max-height: 80%;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  width: 90px; /* Set a fixed width */
+  height: 90px; /* Set a fixed height */
+  object-fit: cover; /* Crop and fill the box uniformly */
+  border-radius: 8px; /* Optional for aesthetics */
 }
 
 .grid-title {
@@ -258,12 +281,15 @@ body {
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
+  background-color: transparent; /* Ensure no background initially */
 }
 
 
 .cta-button:hover {
-  background-color: #4ae0e1;
-  color: #000000;
+  background-color: #4ae0e1; /* Turquoise background */
+  color: #000000 !important; /* Black text */
+  border-color: #4ae0e1; /* Keep the border turquoise */
+  text-shadow: none; /* Ensure there's no shadow overriding the text */
 }
 
 
@@ -603,6 +629,9 @@ ol li {
 .resume-preview {
   text-align: center;
   margin-bottom: 4rem;
+  position: relative;
+  max-width: 900px; /* Adjust container width */
+  margin: 0 auto;
 }
 
 .resume-description {
@@ -627,7 +656,7 @@ ol li {
 
 .view-resume {
   position: absolute;
-  top: 75%; /* Center vertically */
+  top: 55%; /* Center vertically */
   left: 50%; /* Center horizontally */
   transform: translate(-50%, -50%); /* Adjust to center */
   background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
@@ -637,6 +666,7 @@ ol li {
   padding: 0.5rem 1rem;
   border: 2px solid #22223b;
   border-radius: 5px;
+  z-index: 10;
   transition: all 0.3s ease;
 }
 
@@ -647,7 +677,7 @@ ol li {
 
 .resume-update {
   position: absolute;
-  top: 85%; /* Position it slightly below the button */
+  top: 62%; /* Position it slightly below the button */
   left: 50%; /* Center horizontally */
   transform: translate(-50%, -50%);
   font-size: 1rem;
@@ -655,6 +685,7 @@ ol li {
   font-weight: bold;
   background: rgba(255, 255, 255, 0.8); /* Optional: make it stand out */
   padding: 0.2rem 0.5rem; /* Add slight padding */
+  z-index: 10;
   border-radius: 4px; /* Smooth corners for better visuals */
 }
 
@@ -663,7 +694,8 @@ ol li {
   font-weight: 600;
   color: #ffffff;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  margin-top: 5rem;
 }
 
 .resume-form {
@@ -671,7 +703,7 @@ ol li {
   padding: 3rem; 
   border-radius: 8px; 
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  margin-top: 6rem;
+  margin-top: 4rem;
   max-width: 600px; /* Adjust to uniform width */
   margin-left: auto;
   margin-right: auto;
@@ -722,12 +754,15 @@ ol li {
   text-decoration: none !important;
   font-weight: 600 !important;
   transition: all 0.3s ease !important;
+  background-color: transparent; /* Ensure no background initially */
 }
 
 
 .cta-button:hover {
-  background-color: #4ae0e1;
-  color: #000000;
+  background-color: #4ae0e1; /* Turquoise background */
+  color: #000000 !important; /* Black text */
+  border-color: #4ae0e1; /* Keep the border turquoise */
+  text-shadow: none; /* Ensure there's no shadow overriding the text */
 }
 
 /* Resume Reviews Section */
@@ -740,7 +775,7 @@ ol li {
 .resume-reviews h1 {
   font-size: 3.5rem;
   font-weight: 700;
-  margin-bottom: 6rem;
+  margin-bottom: 5rem;
   color: #ffffff;
 }
 
@@ -754,8 +789,8 @@ ol li {
 }
 
 .resume-reviews ul {
-  text-align: left;
-  margin: 6rem auto;
+  text-align: center;
+  margin: 3rem auto;
   padding: 0;
   list-style-position: inside;
   max-width: 800px;
@@ -765,6 +800,7 @@ ol li {
   font-size: 1.2rem;
   color: #ffffff;
   margin-bottom: 1rem;
+  list-style: none; /* Remove bullets */
   line-height: 1.8;
 }
 
@@ -774,7 +810,7 @@ ol li {
   padding: 3rem; 
   border-radius: 8px; 
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  margin-top: 6rem;
+  margin-top: 2rem;
   max-width: 600px; /* Adjust to uniform width */
   margin-left: auto;
   margin-right: auto;
@@ -824,17 +860,39 @@ ol li {
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
+  background-color: transparent; /* Ensure no background initially */
 }
 
 
 .cta-button:hover {
-  background-color: #4ae0e1;
-  color: #000000;
+  background-color: #4ae0e1; /* Turquoise background */
+  color: #000000 !important; /* Black text */
+  border-color: #4ae0e1; /* Keep the border turquoise */
+  text-shadow: none; /* Ensure there's no shadow overriding the text */
 }
+
+.ps-note {
+  font-size: 1rem; /* Adjust text size */
+  color: #ffffff; /* Light gray text for contrast */
+  margin-top: 1rem; /* Add spacing above */
+  text-align: center; /* Center-align the text */
+}
+
+.ps-note a {
+  color: #4ae0e1; /* Turquoise for the link */
+  text-decoration: none; /* Remove underline by default */
+  font-weight: 600; /* Bold link text */
+}
+
+.ps-note a:hover {
+  text-decoration: underline; /* Add underline on hover */
+  color: #3cbfc2; /* Slightly darker turquoise on hover */
+}
+
 
 /* Blog Header Section */
 .blog-header {
-  background-color: #ffffff;
+  background-color: #000000;
   padding: 4rem 2rem;
   text-align: center;
 }
@@ -842,20 +900,20 @@ ol li {
 .blog-header h1 {
   font-size: 3.5rem;
   font-weight: 700;
-  color: #22223b;
+  color: #ffffff;
   margin-bottom: 1rem;
 }
 
 .blog-header .blog-subtitle {
   font-size: 1.5rem;
-  color: #555;
+  color: #ffffff;
   font-weight: 400;
 }
 
 /* Blog Content Section */
 .blog-content {
   padding: 4rem 2rem;
-  color: #333;
+  color: #ffffff;
   font-size: 1.1rem;
   line-height: 1.8;
 }
@@ -869,7 +927,7 @@ ol li {
   font-size: 2rem;
   font-weight: 600;
   margin: 2rem 0 1rem;
-  color: #22223b;
+  color: #ffffff;
 }
 
 .blog-content ul {
@@ -886,10 +944,10 @@ ol li {
 .blog-content blockquote {
   margin: 2rem 0;
   padding: 1.5rem;
-  background-color: #f9f9f9;
+  background-color: #000000;
   border-left: 4px solid #4ae0e1;
   font-style: italic;
-  color: #555;
+  color: #ffffff;
 }
 
 /* Featured Section */
@@ -1014,6 +1072,16 @@ ol li {
   }
 }
 
+.header-image {
+  width: 100%; /* Makes the image responsive */
+  max-width: 600px; /* Set a max width for a neat look */
+  height: auto; /* Maintain aspect ratio */
+  margin: 20px auto; /* Add some space below the subtitle */
+  display: block; /* Center the image */
+  border-radius: 8px; /* Optional: Add rounded corners for style */
+}
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .grid-container {
@@ -1060,3 +1128,87 @@ ol li {
     }
   }
 }
+
+/* Mobile Responsive styles */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: #000000;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+/* Responsive Adjustments for Intro Section */
+@media (max-width: 768px) {
+  .intro-container {
+    font-size: 3rem;
+    line-height: 1.6;
+    padding: 0 1.5rem; /* Add padding for smaller screens */
+    text-align: center; /* Center-align text for better readability */
+    margin: 0 auto; /* center the container horizontally*/
+  }
+
+  .intro-line {
+    white-space: normal; /* Allow text wrapping */
+    font-size: 2rem; /* Adjust font size */
+    border-right: 2px solid #ffffff; /* Adjust cursor size */
+    display: inline-block; /* Ensure proper alignment */
+  }
+
+  @keyframes typing1 {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%; /* Adjust width for smaller screens */
+    }
+  }
+
+  @keyframes typing2 {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%; /* Adjust width for smaller screens */
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-container {
+    font-size: 2rem; /* Further reduce font size for very small screens */
+    line-height: 1.4;
+    padding: 0 1rem;
+    text-align: center; /* Ensure proper centering */
+    margin: 0 auto;
+
+  }
+
+  .intro-line {
+    font-size: 1.8rem; /* Text size for smaller screens */
+    white-space: normal; /* Allow wrapping */
+    display: inline-block;
+  }
+}
+
+/* Hide the '|' separator on small screens (when toggle is active) */
+@media (max-width: 768px) {
+  .nav-links .nav-item[href="#|"] {
+    display: none; /* Hides the separator */
+  }
+}
+

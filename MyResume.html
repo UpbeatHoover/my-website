@@ -14,7 +14,8 @@
     <!-- Navigation Section -->
     <nav class="navbar">
       <div class="navbar-container">
-        <h1 class="logo">SWATHI SOUNDAR</h1>
+        <h1 class="logo"> <a href="index.html">SWATHI SOUNDAR</a></h1>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         <ul class="nav-links">
           <li><a href="index.html" class="nav-item">Work</a></li>
           <li><a href="MyResume.html" class="nav-item active">My Resume</a></li>
@@ -49,33 +50,66 @@
           <p class="resume-update">Updated Late 2024</p>
         </div>
 
-        <!-- Resume Request Form -->
-        <h2 class="request-title">Request My Updated Resume</h2>
-        <form id="resume-request-form" class="resume-form">
-          <div class="form-group">
-            <label for="name">Full Name <span>(required)</span></label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              placeholder="Enter your full name"
-              aria-label="Full Name"
-            />
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address <span>(required)</span></label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              placeholder="Enter your email address"
-              aria-label="Email Address"
-            />
-          </div>
-          <button type="submit" class="cta-button">Request Resume</button>
-        </form>
+      <!-- Resume Request Form -->
+<h2 class="request-title">Request My Updated Resume</h2>
+<form id="resume-request-form" class="resume-form">
+  <div class="form-group">
+    <label for="name">Full Name <span>(required)</span></label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      required
+      placeholder="Enter your full name"
+      aria-label="Full Name"
+    />
+  </div>
+  <div class="form-group">
+    <label for="email">Email Address <span>(required)</span></label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      required
+      placeholder="Enter your email address"
+      aria-label="Email Address"
+    />
+  </div>
+  <button type="submit" class="cta-button">Request Resume</button>
+</form>
+
+<!-- EmailJS Script -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  // Initialize EmailJS
+  emailjs.init("kheji5DNQX-V88w3_"); // Replace with your actual EmailJS Public Key
+
+  // Form Submission Handler
+  document
+    .getElementById("resume-request-form")
+    .addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent default form submission
+
+      // Collect form data
+      const serviceID = "service_8du78ku"; // Replace with your actual EmailJS Service ID
+      const templateID = "template_q3180wk"; // Replace with your actual EmailJS Template ID
+
+      // Send email using EmailJS
+      emailjs
+        .sendForm(serviceID, templateID, this)
+        .then(
+          function () {
+            alert("Your request has been sent successfully!");
+          },
+          function (error) {
+            alert("Failed to send your request. Please try again.");
+            console.error("EmailJS Error:", error);
+          }
+        );
+    });
+</script>
+
+
 
         <!-- Testimonial Section -->
         <section id="testimonial" class="section testimonial">
@@ -110,7 +144,7 @@
 
           // Simulate sending an email to Swathi and the requester
           alert(
-            `Thank you, ${name}. Your request for the resume has been sent! Swathi will respond to ${email} shortly.`
+            `Thank you, Swathi will respond shortly`
           );
 
           // Add real email functionality by integrating with a service like EmailJS or server-side email scripts.
@@ -119,3 +153,10 @@
     </script>
   </body>
 </html>
+
+<script>
+  function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+  }
+</script>
